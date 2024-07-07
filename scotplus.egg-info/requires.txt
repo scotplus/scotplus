@@ -1,0 +1,11 @@
+numpy
+POT
+torch
+scanpy
+scikit-learn
+matplotlib
+umap-learn
+scipy
+matplotlib
+seaborn
+pandas

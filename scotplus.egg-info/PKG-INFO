@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: scotplus
+Version: 0.1.2
+Summary: SCOT+ aligns unpaired single-cell multi-omic datasets via optimal transport.
+Home-page: https://github.com/scotplus/book_source
+Author: Colin Baker
+Author-email: colin_baker@brown.edu
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Natural Language :: English
+Requires-Dist: numpy
+Requires-Dist: POT
+Requires-Dist: torch
+Requires-Dist: scanpy
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: umap-learn
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: pandas
+
+SCOT+ is a compilation of optimal transport tools for application to multi-omic datasets, culminating in a formulation that takes into account local geometry and feature correspondence when aligning data. Visit our website for in-depth tutorials on what exactly this looks like.

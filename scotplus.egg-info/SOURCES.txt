@@ -1,0 +1,11 @@
+README.md
+setup.py
+scotplus/__init__.py
+scotplus/solvers.py
+scotplus.egg-info/PKG-INFO
+scotplus.egg-info/SOURCES.txt
+scotplus.egg-info/dependency_links.txt
+scotplus.egg-info/requires.txt
+scotplus.egg-info/top_level.txt
+scotplus/backend/package_solver_supervised.py
+scotplus/utils/alignment.py
