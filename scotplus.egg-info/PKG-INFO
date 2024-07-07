@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: scotplus
-Version: 1.0.0
+Version: 1.0.1
 Summary: SCOT+ aligns unpaired single-cell multi-omic datasets via optimal transport.
 Home-page: https://github.com/scotplus/book_source
 Author: Colin Baker
