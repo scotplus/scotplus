@@ -67,15 +67,15 @@ class SinkhornSolver:
         init_duals=None,
         log=False,
         verbose=True,
-        early_stopping_tol=1e-4,
+        early_stopping_tol=1e-6,
         device=None,
     ):
         """
         Purpose:
 
         Compute GW solution; i.e. compute, P, P' to minimize $\langle |D_x -
-        D_y|^2, P \otimes P' \rangle$ + reg. + supervision. Forces
-        $\alpha = 1$ and all $\rho = \infty$.
+        D_y|^2, P \otimes P' \\rangle$ + reg. + supervision. Forces
+        $\\alpha = 1$ and all $\\rho = \infty$.
 
         Parameters:
 

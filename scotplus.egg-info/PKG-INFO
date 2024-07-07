@@ -10,6 +10,7 @@ Classifier: Intended Audience :: Science/Research
 Classifier: Operating System :: POSIX :: Linux
 Classifier: Programming Language :: Python :: 3.10
 Classifier: Natural Language :: English
+License-File: LICENSE
 Requires-Dist: numpy
 Requires-Dist: POT
 Requires-Dist: torch
