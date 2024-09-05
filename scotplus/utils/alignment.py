@@ -4,6 +4,7 @@ import torch
 from sklearn.neighbors import kneighbors_graph
 from scipy.sparse.csgraph import dijkstra
 from scipy.sparse import csr_matrix
+from sklearn.neighbors import KNeighborsClassifier
 
 
 def get_barycentre(Xt, pi_samp, device=torch.device("cpu")):
@@ -146,3 +147,22 @@ def compute_graph_distances(
     shortestPath[shortestPath > max_dist] = max_dist
 
     return np.asarray(shortestPath / shortestPath.max())
+
+def LTA(original, projected, original_ctypes, projected_ctypes, n=5):
+    """
+    Metric from UnionCom: "Label Transfer Accuracy"
+    """
+
+    if isinstance(data, pd.DataFrame):
+        data = data.to_numpy()
+    elif isinstance(data, torch.Tensor):
+        data = data.numpy()
+        
+    knn = KNeighborsClassifier(n_neighbors=n)
+    knn.fit(projected, projected_ctypes)
+    type1_predict = knn.predict(original)
+    count = 0
+    for label1, label2 in zip(type1_predict, original_ctypes):
+        if label1 == label2:
+            count += 1
+    return count / len(original_ctypes)
