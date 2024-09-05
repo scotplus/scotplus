@@ -152,12 +152,14 @@ def LTA(original, projected, original_ctypes, projected_ctypes, k=5):
     """
     Purpose:
 
-    Train a k-nearest neighbors classifier on projected data and predict the cell types of the original data, for a given alignment.
+    Train a k-nearest neighbors classifier on projected data and predict the 
+    cell types of the original data, for a given alignment.
     
     Parameters:
 
     original: original domain to be projected.
-    projected: result of projecting another set of samples into the feature space of original via some alignment.
+    projected: result of projecting another set of samples into the feature 
+    space of original via some alignment.
     original_ctypes: cell types of original domain samples.
     projected_ctypes: cell types of projected domain samples.
     k: k parameter in KNN classifier.
