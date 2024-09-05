@@ -148,17 +148,38 @@ def compute_graph_distances(
 
     return np.asarray(shortestPath / shortestPath.max())
 
-def LTA(original, projected, original_ctypes, projected_ctypes, n=5):
+def LTA(original, projected, original_ctypes, projected_ctypes, k=5):
     """
-    Metric from UnionCom: "Label Transfer Accuracy"
+    Purpose:
+
+    Train a k-nearest neighbors classifier on projected data and predict the cell types of the original data, for a given alignment.
+    
+    Parameters:
+
+    original: original domain to be projected.
+    projected: result of projecting another set of samples into the feature space of original via some alignment.
+    original_ctypes: cell types of original domain samples.
+    projected_ctypes: cell types of projected domain samples.
+    k: k parameter in KNN classifier.
+
+    Returns:
+
+    An accuracy score between 0 and 1.
     """
 
-    if isinstance(data, pd.DataFrame):
-        data = data.to_numpy()
-    elif isinstance(data, torch.Tensor):
-        data = data.numpy()
+    if isinstance(original, pd.DataFrame):
+        original = original.to_numpy()
+    elif isinstance(original, torch.Tensor):
+        original = original.numpy()
+    if isinstance(projected, pd.DataFrame):
+        projected = projected.to_numpy()
+    elif isinstance(projected, torch.Tensor):
+        projected = projected.numpy()
         
-    knn = KNeighborsClassifier(n_neighbors=n)
+    assert(len(original) == len(original_ctypes))
+    assert(len(projected) == len(projected_ctypes))
+        
+    knn = KNeighborsClassifier(n_neighbors=k)
     knn.fit(projected, projected_ctypes)
     type1_predict = knn.predict(original)
     count = 0

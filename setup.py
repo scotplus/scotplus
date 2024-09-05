@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='scotplus',
-    version='1.0.1',    
+    version='1.0.2',    
     description='SCOT+ aligns unpaired single-cell multi-omic datasets via optimal transport.',
     long_description='SCOT+ is a compilation of optimal transport tools for application to multi-omic datasets, culminating in a formulation that takes into account local geometry and feature correspondence when aligning data. Visit our website for in-depth tutorials on what exactly this looks like.',
     url='https://github.com/scotplus/book_source',
